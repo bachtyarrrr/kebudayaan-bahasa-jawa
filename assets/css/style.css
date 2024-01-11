@@ -21,7 +21,7 @@
     box-sizing: border-box;
     scroll-behavior: smooth;
     text-decoration: none;
-    /* transition: all .3s ease-in-out; */
+    transition: all .3s ease-in-out;
 }
 
 body{

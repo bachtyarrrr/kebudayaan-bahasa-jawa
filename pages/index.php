@@ -10,7 +10,7 @@
             indah.
         </p>
         <div class="row">
-            <a href="#pengertian" target="_blank" style="text-decoration: none;">
+            <a href="./profile.php" style="text-decoration: none;">
                 <button class="btn">Get Started</button>
             </a>
         </div>

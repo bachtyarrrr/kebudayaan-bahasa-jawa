@@ -1,0 +1,319 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+    --color-primary: #EEF5FF;
+    --color-seccond: #86B6F6;
+    --bg-color: #B4D4FF;
+    --btn-color: #176B87;
+    --btn-del: red;
+    --btn-upd: orange;
+
+    --font-color: #fff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+    list-style: none;
+    outline: none;
+}
+
+body {
+    min-height: 100vh;
+    font-family: 'Poppins', sans-serif;
+}
+
+.sidebar {
+    position: fixed;
+    background-color: var(--btn-color);
+    width: 20vw;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.brand {
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 2px solid lightblue;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: var(--color-seccond);
+    cursor: pointer;
+}
+
+.sidebar ul li a {
+    font-size: 20px;
+    padding: 10px 40px;
+    color: var(--font-color);
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.sidebar ul li:hover {
+    background-color: var(--color-seccond);
+    color: var(--btn-color);
+}
+
+.container {
+    position: absolute;
+    right: 0;
+    width: 80vw;
+    height: 47.7vw;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 78.8vw;
+    height: 11vh;
+    background-color: var(--btn-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+
+.nav {
+    width: 90%;
+    display: flex;
+    align-items: center;
+}
+
+.search {
+    flex: 5;
+    display: flex;
+    justify-content: center;
+}
+
+.search input {
+    border: none;
+    background-color: white;
+    padding: 10px;
+    width: 50%;
+    border-radius: 10px 0 0 10px;
+}
+
+.search button {
+    width: 40px;
+    height: 40px;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    background-color: var(--color-seccond);
+    border-radius: 0 10px 10px 0;
+}
+
+.search button:hover {
+    color: var(--btn-color);
+    background-color: var(--bg-color);
+}
+
+.user {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.user span {
+    color: white;
+}
+
+.user a {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    padding: 5px;
+    margin: 5px 20px;
+    color: white;
+    cursor: pointer;
+}
+
+.user a:hover {
+    color: var(--color-seccond);
+}
+
+.content {
+    position: relative;
+    margin-top: 10vh;
+    margin-left: 5vh;
+    min-height: 90vh;
+}
+
+.cards {
+    padding: 15px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.card {
+    width: 230px;
+    height: 130px;
+    background-color: var(--color-primary);
+    margin: 15px 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.19);
+    border-radius: 10px;
+}
+
+.box h1 {
+    color: var(--btn-color);
+}
+
+.content-2 {
+    min-height: 60vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.jenis {
+    min-height: 50vh;
+    flex: 5;
+    background-color: var(--color-primary);
+    margin: 0 25px 25px 25px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.19);
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+}
+
+.title {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 15px 10px;
+    border-bottom: 2px solid var(--btn-color);
+}
+
+.title .btn, .jenis .btn, .pengaruh .btn, .btn {
+    background-color: var(--btn-color);
+    color: var(--color-primary);
+    padding: 5px 10px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 10px;
+
+} 
+
+.title .btn:hover, .btn:hover {
+    background-color: var(--color-seccond);
+    color: var(--btn-color);
+}
+
+table {
+    padding: 10px;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+    /* border-bottom: 2px solid lightblue; */
+}
+
+.pengaruh {
+    flex: 5;
+    background-color: var(--color-primary);
+    min-height: 50vh;
+    margin: 0 25px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.19);
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+}
+
+.perbedaan {
+    min-height: 50vh;
+    flex: 5;
+    background-color: var(--color-primary);
+    margin: 0 25px 25px 25px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.19);
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+}
+
+.tabel {
+    min-height: 50vh;
+    flex: 5;
+    background-color: var(--color-primary);
+    margin: 100px 25px 25px 25px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.19);
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+}
+
+.form {
+    min-height: 50vh;
+    flex: 5;
+    background-color: var(--color-primary);
+    margin: 100px 25px 25px 25px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.19);
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+}
+
+input {
+    height: 45px;
+    width: 100%;
+    outline: none;
+    align-items: center;
+    padding-left: 15px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+input .deskripsi {
+    height: 45px;
+    width: 100%;
+    outline: none;
+    align-items: center;
+    padding-left: 15px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+textarea {
+    height: 45px;
+    width: 100%;
+    outline: none;
+    align-items: center;
+    padding-top: 10px;
+    padding-left: 15px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+/* @media screen and (max-width: 1050px) {
+    .sidebar ul li {
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 940px) {
+    .sidebar ul li span {
+        display: none;
+    }
+    .sidebar {
+        align-items: center;
+    }
+    .sidebar ul li i {
+        font-size: 30px;
+    }
+} */
