@@ -1,13 +1,28 @@
-<?php include '../include/_navbar.php' ?>
-<section class="main">
-    <h2 class="header">PROFILE</h2>
-    <div class="profile" data-aos="zoom-in-up">
-        <!-- <img src="../assets/img/header.svg" alt="about image" data-aos="zoom-in-up"> -->
-        <p>bahasa Jawa, adalah salah satu bahasa daerah yang paling banyak digunakan di Indonesia. Bahasa ini
-            memiliki sejarah dan keberagaman dialek yang kaya, serta memiliki pengaruh besar dalam budaya Jawa yang
-            kaya dan beragam.
+<?php include '../include/_navbar.php';
+$result = mysqli_query($connection, "SELECT * FROM profile");
+while ($data = mysqli_fetch_array($result)) {
+?>
+<header class="container">
+    <div class="content">
+        <h4>PROFILE</h4>
+        <h1 data-aos="fade-left"><?= $data['name']; ?></h1>
+        <p>
+            <?= $data['deskripsi']; ?>
         </p>
-        <span class="blur"></span>
-        <span class="blur"></span>
-</section>
-<?php include '../include/_footer.php' ?>
+        <div class="row">
+            <a href="https://www.instagram.com/<?= $data['instagram']; ?>" style="text-decoration: none;"
+                target="_blank">
+                <button class="btn">Instagram</button>
+            </a>
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=<?= $data['email']; ?>"
+                style="text-decoration: none;" target="_blank">
+                <button class="btn">Email</button>
+            </a>
+        </div>
+    </div>
+    <div class="image">
+        <img src="<?= "../admin/assets/img/" . $data['gambar']; ?>" style="width: 500px">
+    </div>
+</header>
+<?php };
+include '../include/_footer.php'; ?>

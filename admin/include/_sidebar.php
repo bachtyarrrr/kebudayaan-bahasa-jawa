@@ -19,6 +19,6 @@
             <li><a href="../jenis/">Jenis-jenis</a></li>
             <li><a href="../pengaruh/">Pengaruh</a></li>
             <li><a href="../perbedaan/">Perbedaan</a></li>
-            <li><a href="../admin/pengaturan.php">Pengaturan</a></li>
+            <li><a href="../pengaturan/">Pengaturan</a></li>
         </ul>
     </div>

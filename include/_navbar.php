@@ -6,12 +6,14 @@ $pengertian = mysqli_query($connection, "SELECT * FROM pengertian");
 $jenis = mysqli_query($connection, "SELECT * FROM jenis");
 $pengaruh = mysqli_query($connection, "SELECT * FROM pengaruh");
 $perbedaan = mysqli_query($connection, "SELECT * FROM perbedaan");
+$result = mysqli_query($connection, "SELECT * FROM pengaturan");
+while ($data = mysqli_fetch_array($result)) {
 ?>
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Explore Bahasa Jawa</title>
+    <title>Selamat Datang di <?= $data['name']; ?>!</title>
     <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 
@@ -20,9 +22,10 @@ $perbedaan = mysqli_query($connection, "SELECT * FROM perbedaan");
     <nav>
         <div class="nav-logo">
             <a href="../" style="color: white; font-weight: bold; letter-spacing: 2px">
-                JavaneseExpression
+                <?= $data['name']; ?>
             </a>
         </div>
+        <?php } ?>
         <ul class="nav-links">
             <li class="link"><a href="../pages/profile.php">Profil</a></li>
             <li class="link"><a href="#">Pengertian</a>
@@ -31,7 +34,7 @@ $perbedaan = mysqli_query($connection, "SELECT * FROM perbedaan");
                         <?php
                         while ($data = mysqli_fetch_array($pengertian)) :
                         ?>
-                        <li><a href=""><?= $data['pengertian'] ?></a></li>
+                        <li><a href="../pages/pengertian.php?id=<?= $data['id'] ?>"><?= $data['pengertian'] ?></a></li>
                         <?php endwhile; ?>
                         <li class="menu-2"><a href="#">Jenis Bahasa Jawa</a>
                             <div class="sub-menu-2">
@@ -39,7 +42,8 @@ $perbedaan = mysqli_query($connection, "SELECT * FROM perbedaan");
                                     <?php
                                     while ($data = mysqli_fetch_array($jenis)) :
                                     ?>
-                                    <li><a href=""><?= $data['name'] ?></a></li>
+                                    <li><a href="../pages/jenis.php?id=<?= $data['id'] ?>"><?= $data['name'] ?></a>
+                                    </li>
                                     <?php endwhile; ?>
                                 </ul>
                             </div>
@@ -53,7 +57,7 @@ $perbedaan = mysqli_query($connection, "SELECT * FROM perbedaan");
                         <?php
                         while ($data = mysqli_fetch_array($pengaruh)) :
                         ?>
-                        <li><a href="">di <?= $data['pengaruh'] ?></a></li>
+                        <li><a href="../pages/pengaruh.php?id=<?= $data['id'] ?>">di <?= $data['pengaruh'] ?></a></li>
                         <?php endwhile; ?>
                     </ul>
                 </div>
@@ -64,7 +68,7 @@ $perbedaan = mysqli_query($connection, "SELECT * FROM perbedaan");
                         <?php
                         while ($data = mysqli_fetch_array($perbedaan)) :
                         ?>
-                        <li><a href=""><?= $data['perbedaan'] ?></a></li>
+                        <li><a href="../pages/perbedaan.php?id=<?= $data['id'] ?>"><?= $data['perbedaan'] ?></a></li>
                         <?php endwhile; ?>
                     </ul>
                 </div>

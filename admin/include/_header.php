@@ -1,3 +1,9 @@
+<?php
+require_once '../config/auth.php';
+
+isLogin();
+?>
+
 <div class="container">
     <div class="header">
         <div class="nav">
@@ -6,9 +12,9 @@
                 <button type="submit">Cari</button>
             </div>
             <div class="user">
-                <span>Admin</span>
-                <a href="#">Profile</a>
-                <a href="#">Logout</a>
+                <span><?= $_SESSION['login']['username'] ?></span>
+                <a href="../profile/">Profile</a>
+                <a href="../logout.php">Logout</a>
             </div>
         </div>
     </div>

@@ -1,13 +1,14 @@
-<?php include '../include/_navbar.php' ?>
+<?php include '../include/_navbar.php';
+
+$result = mysqli_query($connection, "SELECT * FROM pengaturan");
+while ($data = mysqli_fetch_array($result)) {
+?>
 <header class="container">
     <div class="content">
-        <h4>Selamat datang di JavaneseExpression!</h4>
-        <h1 data-aos="fade-left">Menyelami Kekayaan Bahasa Jawa: Pengertian dan Tata Cara Penggunaannya</h1>
+        <h4>Selamat datang di <?= $data['name']; ?>!</h4>
+        <h1 data-aos="fade-left"><?= $data['title']; ?></h1>
         <p>
-            Mari kita menjelajahi keindahan dan kedalaman Bahasa Jawa bersama JavaneseExpressions. Kami hadir
-            untuk
-            membimbing Anda memahami esensi bahasa ini dan memperkenalkan Anda pada tata cara penggunaannya yang
-            indah.
+            <?= $data['deskripsi']; ?>
         </p>
         <div class="row">
             <a href="./profile.php" style="text-decoration: none;">
@@ -19,4 +20,6 @@
         <img src="../assets/img/header.svg">
     </div>
 </header>
-<?php include '../include/_footer.php' ?>
+
+<?php };
+include '../include/_footer.php' ?>

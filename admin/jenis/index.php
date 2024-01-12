@@ -28,7 +28,7 @@ $result = mysqli_query($connection, "SELECT * FROM jenis");
                     <?= $no++ ?>
                 </td>
                 <td><?= $data['name'] ?></td>
-                <td><?= $data['deskripsi'] ?></td>
+                <td><?= substr($data['deskripsi'], 0, 500) ?></td>
                 <td>
                     <a href="edit.php?id=<?= $data['id'] ?>"" class=" btn">Edit</a>
                     <a href="delete.php?id=<?= $data['id'] ?>"" class=" btn">Hapus</a>
