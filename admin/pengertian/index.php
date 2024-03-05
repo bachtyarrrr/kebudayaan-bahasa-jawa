@@ -23,17 +23,17 @@ $result = mysqli_query($connection, "SELECT * FROM pengertian");
             $no = 1;
             while ($data = mysqli_fetch_array($result)) :
             ?>
-            <tr>
-                <td>
-                    <?= $no++ ?>
-                </td>
-                <td><?= $data['pengertian'] ?></td>
-                <td><?= substr($data['deskripsi'], 0, 500) ?></td>
-                <td>
-                    <a href="edit.php?id=<?= $data['id'] ?>"" class=" btn">Edit</a>
-                    <a href="delete.php?id=<?= $data['id'] ?>"" class=" btn">Hapus</a>
-                </td>
-            </tr>
+                <tr>
+                    <td>
+                        <?= $no++ ?>
+                    </td>
+                    <td><?= $data['name'] ?></td>
+                    <td><?= substr($data['deskripsi'], 0, 500) ?></td>
+                    <td>
+                        <a href="edit.php?id=<?= $data['id'] ?>"" class=" btn">Edit</a>
+                        <a href="delete.php?id=<?= $data['id'] ?>"" class=" btn">Hapus</a>
+                    </td>
+                </tr>
             <?php
             endwhile;
             ?>

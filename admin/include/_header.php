@@ -8,13 +8,12 @@ isLogin();
     <div class="header">
         <div class="nav">
             <div class="search">
-                <input type="text" placeholder="Pencarian...">
-                <button type="submit">Cari</button>
+                <!-- <input type="text" placeholder="Pencarian...">
+                <button type="submit">Cari</button> -->
             </div>
             <div class="user">
                 <span><?= $_SESSION['login']['username'] ?></span>
-                <a href="../profile/">Profile</a>
-                <a href="../logout.php">Logout</a>
+                <a href="../../logout.php">Logout</a>
             </div>
         </div>
     </div>

@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php require_once "../admin/config/connection.php";
+require_once '../admin/config/auth.php';
+isLogin();
 
 $pengertian = mysqli_query($connection, "SELECT * FROM pengertian");
 $jenis = mysqli_query($connection, "SELECT * FROM jenis");
@@ -34,7 +36,7 @@ while ($data = mysqli_fetch_array($result)) {
                         <?php
                         while ($data = mysqli_fetch_array($pengertian)) :
                         ?>
-                        <li><a href="../pages/pengertian.php?id=<?= $data['id'] ?>"><?= $data['pengertian'] ?></a></li>
+                        <li><a href="../pages/pengertian.php?id=<?= $data['id'] ?>"><?= $data['name'] ?></a></li>
                         <?php endwhile; ?>
                         <li class="menu-2"><a href="#">Jenis Bahasa Jawa</a>
                             <div class="sub-menu-2">
@@ -57,7 +59,7 @@ while ($data = mysqli_fetch_array($result)) {
                         <?php
                         while ($data = mysqli_fetch_array($pengaruh)) :
                         ?>
-                        <li><a href="../pages/pengaruh.php?id=<?= $data['id'] ?>">di <?= $data['pengaruh'] ?></a></li>
+                        <li><a href="../pages/pengaruh.php?id=<?= $data['id'] ?>">di <?= $data['name'] ?></a></li>
                         <?php endwhile; ?>
                     </ul>
                 </div>
@@ -68,8 +70,15 @@ while ($data = mysqli_fetch_array($result)) {
                         <?php
                         while ($data = mysqli_fetch_array($perbedaan)) :
                         ?>
-                        <li><a href="../pages/perbedaan.php?id=<?= $data['id'] ?>"><?= $data['perbedaan'] ?></a></li>
+                        <li><a href="../pages/perbedaan.php?id=<?= $data['id'] ?>"><?= $data['name'] ?></a></li>
                         <?php endwhile; ?>
+                    </ul>
+                </div>
+            </li>
+            <li class="link"><a href="#">Hai <?= $_SESSION['login']['username'] ?></a>
+                <div class="sub-menu-1">
+                    <ul>
+                        <li><a href="../logout.php">Logout</a></li>
                     </ul>
                 </div>
             </li>

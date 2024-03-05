@@ -3,9 +3,8 @@
 require_once '../config/connection.php';
 
 // membuat variabel untuk menampung data dari form
+$id = $_POST['id'];
 $name = $_POST['name'];
-$username = $_POST['username'];
-$password = $_POST['password'];
 $deskripsi = $_POST['deskripsi'];
 $instagram  = $_POST['instagram'];
 $email = $_POST['email'];
@@ -21,7 +20,7 @@ if ($gambar != "") {
         move_uploaded_file($file_tmp, '../assets/img/' . $logo_baru); //memindah file gambar ke folder gambar
 
         // jalankan query UPDATE berdasarkan ID yang produknya kita edit
-        $query  = mysqli_query($connection, "UPDATE profile SET name = '$name', username = '$username', password = '$password', deskripsi = '$deskripsi', instagram = '$instagram', email = '$email', gambar = '$logo_baru'");
+        $query  = mysqli_query($connection, "UPDATE profile SET name = '$name', deskripsi = '$deskripsi', instagram = '$instagram', email = '$email', gambar = '$logo_baru' WHERE id = '$id'");
         // periska query apakah ada error
         if ($query) {
             $_SESSION['info'] = [
@@ -46,7 +45,7 @@ if ($gambar != "") {
     }
 } else {
     // jalankan query UPDATE berdasarkan ID yang produknya kita edit
-    $query  = mysqli_query($connection, "UPDATE profile SET name = '$name', username = '$username', password = '$password', deskripsi = '$deskripsi', instagram = '$instagram', email = '$email'");
+    $query  = mysqli_query($connection, "UPDATE profile SET name = '$name', deskripsi = '$deskripsi', instagram = '$instagram', email = '$email' WHERE id = '$id'");
     // periska query apakah ada error
     if ($query) {
         $_SESSION['info'] = [

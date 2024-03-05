@@ -13,12 +13,15 @@ require_once '../config/connection.php';
             <table>
                 <tr>
                     <td>Pengertian</td>
-                    <td><input type="text" name="pengertian" placeholder="Masukkan Pengertian..."></td>
+                    <td><input type="text" name="name" placeholder="Masukkan Pengertian..."></td>
                 </tr>
                 <tr>
                     <td>Deskripsi</td>
                     <td><textarea type="text" name="deskripsi" placeholder="Masukkan Deskripsi..."></textarea></td>
-                    <!-- <td><input class="deskripsi" type="text" name="deskripsi" placeholder="Masukkan Deskripsi..."></td> -->
+                </tr>
+                <tr>
+                    <td>Gambar</td>
+                    <td><input type="file" name="gambar"></td>
                 </tr>
                 <tr>
                     <td>

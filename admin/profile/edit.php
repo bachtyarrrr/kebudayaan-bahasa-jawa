@@ -4,13 +4,13 @@ include "../include/_header.php";
 require_once '../config/connection.php';
 
 $id = $_GET['id'];
-$query = mysqli_query($connection, "SELECT * FROM jenis WHERE id='$id'");
+$query = mysqli_query($connection, "SELECT * FROM profile WHERE id='$id'");
 ?>
 
 <div class="content">
     <div class="tabel">
         <div class="title">
-            <h2>Tambah Data</h2>
+            <h2>Profile Saya</h2>
         </div>
         <form action="./update.php" method="POST" enctype="multipart/form-data">
             <?php
@@ -19,15 +19,23 @@ $query = mysqli_query($connection, "SELECT * FROM jenis WHERE id='$id'");
                 <table>
                     <input type="hidden" name="id" value="<?= $row['id'] ?>">
                     <tr>
-                        <td>Jenis</td>
+                        <td>Nama</td>
                         <td><input type="text" name="name" value="<?= $row['name'] ?>" required></td>
                     </tr>
                     <tr>
-                        <td>Deskripsi</td>
+                        <td>Deskripsi Diri</td>
                         <td><input type="text" name="deskripsi" value="<?= $row['deskripsi'] ?>" required></td>
                     </tr>
                     <tr>
-                        <td>Gambar</td>
+                        <td>Instagram</td>
+                        <td><input type="text" name="instagram" value="<?= $row['instagram'] ?>" required></td>
+                    </tr>
+                    <tr>
+                        <td>Email</td>
+                        <td><input type="email" name="email" value="<?= $row['email'] ?>" required></td>
+                    </tr>
+                    <tr>
+                        <td>Foto</td>
                         <td><img src=" ../assets/img/<?php echo $row['gambar']; ?>" style="width: 50px;float: left;margin-bottom: 5px;"><input type="file" name="gambar"><i style="float: left;font-size: 11px;color: red">*Abaikan jika tidak merubah
                                 foto</i></td>
                     </tr>

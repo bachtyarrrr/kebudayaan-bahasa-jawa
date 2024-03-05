@@ -10,17 +10,19 @@ $jns = mysqli_query($connection, "SELECT * FROM jenis");
 $jenis = mysqli_query($connection, "SELECT COUNT(*) FROM jenis");
 $pengaruh = mysqli_query($connection, "SELECT COUNT(*) FROM pengaruh");
 $perbedaan = mysqli_query($connection, "SELECT COUNT(*) FROM perbedaan");
+$users = mysqli_query($connection, "SELECT COUNT(*) FROM users WHERE role = 'user'");
 
 $total_jenis = mysqli_fetch_array($jenis)[0];
 $total_pengaruh = mysqli_fetch_array($pengaruh)[0];
 $total_perbedaan = mysqli_fetch_array($perbedaan)[0];
+$total_users = mysqli_fetch_array($users)[0];
 ?>
 <div class="content">
     <div class="cards">
         <div class="card">
             <div class="box">
                 <h1><?= $total_jenis ?></h1>
-                <h3>Jenis Bahasa Jawa</h3>
+                <h3>Jenis-jenis</h3>
             </div>
         </div>
         <div class="card">
@@ -37,8 +39,8 @@ $total_perbedaan = mysqli_fetch_array($perbedaan)[0];
         </div>
         <div class="card">
             <div class="box">
-                <h1>1</h1>
-                <h3>Admin</h3>
+                <h1><?= $total_users ?></h1>
+                <h3>Users</h3>
             </div>
         </div>
     </div>
@@ -57,10 +59,10 @@ $total_perbedaan = mysqli_fetch_array($perbedaan)[0];
                 $no = 1;
                 while ($data = mysqli_fetch_array($jns)) :
                 ?>
-                <tr>
-                    <td><?= $no++ ?></td>
-                    <td><?= $data['name'] ?></td>
-                </tr>
+                    <tr>
+                        <td><?= $no++ ?></td>
+                        <td><?= $data['name'] ?></td>
+                    </tr>
                 <?php endwhile; ?>
             </table>
         </div>
@@ -78,10 +80,10 @@ $total_perbedaan = mysqli_fetch_array($perbedaan)[0];
                 $no = 1;
                 while ($data = mysqli_fetch_array($ngaruh)) :
                 ?>
-                <tr>
-                    <td><?= $no++ ?></td>
-                    <td>di <?= $data['pengaruh'] ?></td>
-                </tr>
+                    <tr>
+                        <td><?= $no++ ?></td>
+                        <td>di <?= $data['name'] ?></td>
+                    </tr>
                 <?php endwhile; ?>
             </table>
         </div>
@@ -99,10 +101,10 @@ $total_perbedaan = mysqli_fetch_array($perbedaan)[0];
                 $no = 1;
                 while ($data = mysqli_fetch_array($beda)) :
                 ?>
-                <tr>
-                    <td><?= $no++ ?></td>
-                    <td><?= $data['perbedaan'] ?></td>
-                </tr>
+                    <tr>
+                        <td><?= $no++ ?></td>
+                        <td><?= $data['name'] ?></td>
+                    </tr>
                 <?php endwhile; ?>
             </table>
         </div>

@@ -22,6 +22,10 @@ require_once '../config/connection.php';
                     <!-- <td><input class="deskripsi" type="text" name="deskripsi" placeholder="Masukkan Deskripsi..."></td> -->
                 </tr>
                 <tr>
+                    <td>Gambar</td>
+                    <td><input type="file" name="gambar" required></td>
+                </tr>
+                <tr>
                     <td>
                         <input type="reset" class="btn" value="Reset">
 

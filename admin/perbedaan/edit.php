@@ -20,11 +20,18 @@ $query = mysqli_query($connection, "SELECT * FROM perbedaan WHERE id='$id'");
                 <input type="hidden" name="id" value="<?= $row['id'] ?>">
                 <tr>
                     <td>Perbedaan</td>
-                    <td><input type="text" name="perbedaan" value="<?= $row['perbedaan'] ?>" required></td>
+                    <td><input type="text" name="name" value="<?= $row['name'] ?>" required></td>
                 </tr>
                 <tr>
                     <td>Deskripsi</td>
                     <td><input type="text" name="deskripsi" value="<?= $row['deskripsi'] ?>" required></td>
+                </tr>
+                <tr>
+                    <td>Gambar</td>
+                    <td><img src=" ../assets/img/<?php echo $row['gambar']; ?>"
+                            style="width: 50px;float: left;margin-bottom: 5px;"><input type="file" name="gambar"><i
+                            style="float: left;font-size: 11px;color: red">*Abaikan jika tidak merubah
+                            foto</i></td>
                 </tr>
                 <tr>
                     <td>

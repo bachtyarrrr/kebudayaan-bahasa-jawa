@@ -5,6 +5,8 @@ require_once '../config/connection.php';
 // membuat variabel untuk menampung data dari form
 $name = $_POST['name'];
 $deskripsi = $_POST['deskripsi'];
+$instagram  = $_POST['instagram'];
+$email = $_POST['email'];
 $gambar = $_FILES['gambar']['name'];
 //cek dulu jika merubah gambar produk jalankan coding ini
 if ($gambar != "") {
@@ -12,12 +14,12 @@ if ($gambar != "") {
     $x = explode('.', $gambar); //memisahkan nama file dengan ekstensi yang diupload
     $ekstensi = strtolower(end($x));
     $file_tmp = $_FILES['gambar']['tmp_name'];
-    $logo_baru = 'perbedaan-' . $name . '.png'; //menggabungkan angka acak dengan nama file sebenarnya
+    $logo_baru = 'foto-' . $name . '.png'; //menggabungkan angka acak dengan nama file sebenarnya
     if (in_array($ekstensi, $ekstensi_diperbolehkan) === true) {
         move_uploaded_file($file_tmp, '../assets/img/' . $logo_baru); //memindah file gambar ke folder gambar
 
         // jalankan query INSERT INTO unutk menambahkan data
-        $query  = mysqli_query($connection, "INSERT INTO perbedaan (name, deskripsi, gambar) VALUE ('$name', '$deskripsi', '$logo_baru')");
+        $query  = mysqli_query($connection, "INSERT INTO profile (name, deskripsi, instagram, email, gambar) VALUE ('$name', '$deskripsi', '$instagram', '$email', '$logo_baru') ");
         // periska query apakah ada error
         if ($query) {
             $_SESSION['info'] = [
@@ -42,7 +44,7 @@ if ($gambar != "") {
     }
 } else {
     // jalankan query INSERT INTO unutk menambahkan data
-    $query  = mysqli_query($connection, "INSERT INTO perbedaan (name, deskripsi) VALUE ('$name', '$deskripsi')");
+    $query  = mysqli_query($connection, "INSERT INTO profile (name, deskripsi, instagram, email) VALUE ('$name', '$deskripsi', '$instagram', '$email')");
     // periska query apakah ada error
     if ($query) {
         $_SESSION['info'] = [

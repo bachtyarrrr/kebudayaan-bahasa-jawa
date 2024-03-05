@@ -19,6 +19,8 @@
             <li><a href="../jenis/">Jenis-jenis</a></li>
             <li><a href="../pengaruh/">Pengaruh</a></li>
             <li><a href="../perbedaan/">Perbedaan</a></li>
+            <li><a href="../users/">Users</a></li>
+            <li><a href="../profile/">Anggota</a></li>
             <li><a href="../pengaturan/">Pengaturan</a></li>
         </ul>
     </div>
